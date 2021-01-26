@@ -20,3 +20,6 @@ class Members(models.Model):
         db_table = "world_users"
         verbose_name = "World_Users"
         verbose_name_plural = "World Users"
+
+    def __str__(self):
+        return self.username
