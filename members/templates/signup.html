@@ -1,0 +1,18 @@
+<h1>회원가입</h1>
+
+<!--id, pw, name, email, gender, phone, address, -->
+<img src="http://27.96.131.103:8000/static/a.jpg">
+{{ res }}
+<form method='POST' action='/signup'>
+	{% csrf_token %}
+	id : <input type="text" name="userid" /><br>
+	pw : <input type="password" name="userpassword"/><br>
+	name : <input type="text" name="username" /><br>
+	email : <input type="email" name="useremail"/><br>
+	gender : <input type="text" name="usergender" /><br>
+	phone : <input type="text" name="userphone" /><br>
+	address : <input type="text" name="useraddress"/><br>
+
+	<input type="submit"/>
+
+</form>
