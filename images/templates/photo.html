@@ -62,18 +62,24 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <form method="POST" action=""> 
+                  <form method="POST" action="/images/"> 
                     {% csrf_token %}  
-                    <input type="text">
+                    <input type="text" name="imgtitle">
                   </form>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
-                  <form method="post" action="{% url 'check:check' %}" enctype="multipart/form-data">
+                  <form method="POST" action="/images/" enctype="multipart/form-data">
                     {% csrf_token %}
-                    <input name = "file-upload" id="file-upload" type="file" accept=".jpg,.jpeg,.png" multiple >
+                    <input name = "imgupload" id="file-upload" type="file" accept=".jpg,.jpeg,.png" multiple >
                     <input type="submit" value="제출">
                   </form>
+                  <div class="modal-body">
+                    <form method="POST" action="/images/"> 
+                      {% csrf_token %}  
+                      <input type="text" name="imgcontent">
+                    </form>
+                  </div>
                
                 
                 
@@ -93,31 +99,31 @@
         </div>
         <div class="img_container">
             <div class="card" style="width: 18rem; height: 11rem; margin-left: 200px;">
-                <img src="{{}}" class="card-img-top" alt="...">
+                <img src="http://27.96.131.103:8000/static/loginimg.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                 <p class="card-text">asdf</p>
                 </div>
             </div>
             <div class="card" style="width: 18rem; height: 11rem;">
-                <img src={{}} class="card-img-top" alt="...">
+                <img src="http://27.96.131.103:8000/static/dog.png" class="card-img-top" alt="...">
                 <div class="card-body">
                 <p class="card-text">asdf</p>
                 </div>
             </div>
             <div class="card" style="width: 18rem; height: 11rem;">
-                <img src={{}} class="card-img-top" alt="...">
+                <img src="http://27.96.131.103:8000/static/a.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                 <p class="card-text">asdf</p>
                 </div>
             </div>
             <div class="card" style="width: 18rem; height: 11rem;">
-                <img src={{}} class="card-img-top" alt="...">
+                <img src="27.96.131.103:8000/static/0.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                 <p class="card-text">asdf</p>
                 </div>
             </div>
             <div class="card" style="width: 18rem; height: 11rem;">
-                <img src={{}} class="card-img-top" alt="...">
+                <img src="27.96.131.103:8000/static/0.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                 <p class="card-text">asdf</p>
                 </div>
@@ -125,31 +131,31 @@
         </div>
         <div class="img_container2">
             <div class="card" style="width: 18rem; height: 11rem; margin-left: 200px;">
-                <img src={{}} class="card-img-top" alt="...">
+                <img src="27.96.131.103:8000/static/0.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                 <p class="card-text">asdf</p>
                 </div>
             </div>
             <div class="card" style="width: 18rem; height: 11rem;">
-                <img src={{}} class="card-img-top" alt="...">
+                <img src="27.96.131.103:8000/static/0.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                 <p class="card-text">asdf</p>
                 </div>
             </div>
             <div class="card" style="width: 18rem; height: 11rem;">
-                <img src={{}} class="card-img-top" alt="...">
+                <img src="27.96.131.103:8000/static/0.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                 <p class="card-text">asdf</p>
                 </div>
             </div>
             <div class="card" style="width: 18rem; height: 11rem;">
-                <img src={{}} class="card-img-top" alt="...">
+                <img src="27.96.131.103:8000/static/0.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                 <p class="card-text">asdf</p>
                 </div>
             </div>
             <div class="card" style="width: 18rem; height: 11rem;">
-                <img src={{}} class="card-img-top" alt="...">
+                <img src="27.96.131.103:8000/static/0.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                 <p class="card-text">asdf</p>
                 </div>
