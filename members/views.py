@@ -31,7 +31,7 @@ def login(req):
         
         # print(req.POST['userid'])
         
-        return render(req, 'login.html', res_data)
+        return render(req, 'index.html', res_data)
 
     return render(req, 'login.html')
 

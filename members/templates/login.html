@@ -1,9 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 	<head>
 		<meta charset="utf-8">
 		
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@500&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
 		
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 		
@@ -14,21 +18,22 @@
 	</head>
 	  
 	<style>
-
+		
+		
 		body {
 			width:100vw;
 			height:100vh;
 			margin: 0;
 			padding-top: 40px;
 			padding-bottom: 80px;
+			background-image: url("diary.jpg");
 			background-repeat: no-repeat;
-			background-image: url("http://27.96.131.103:8000/static/dog.png")
+			background-size: cover;	
 		}
 		
 		.card {
 			margin: 0 auto; /* Added */
 			float: none; /* Added */
-			margin-bottom: 10px; /* Added */
 			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 		}
 		
@@ -36,15 +41,36 @@
 			position: relative;
 			height: auto;
 			width: 300px;
-			margin: 0 auto;
+			margin: 10px auto;
 			-webkit-box-sizing: border-box;
 			-moz-box-sizing: border-box;
 				 box-sizing: border-box;
 			padding: 10px;
 			font-size: 16px;
 			border-radius: 50px;
+			font-family: 'Poor Story', cursive;
+		
 		}
 		
+		#btn-login {
+			margin: 30px auto 0;
+			width: 250px;
+			border-radius: 50px;
+			font-family: 'Poor Story', cursive;
+		}
+		
+		#btn-register {
+			margin: 0 auto;
+			width: 150px;
+			border-radius: 50px;
+			background-color: transparent;
+			font-family: 'Poor Story', cursive;
+			
+		}
+		
+		
+		
+	
 		
 	</style>
 
@@ -52,31 +78,31 @@
 
 		<div class="card align-middle" style="width:30rem; height: 30rem; border-radius:360px;">
 			
-			<div class="card-title" style="margin-top:60px;">
-				<h2 class="card-title text-center" style="color:#113366; font-size:45px;">싸이월드</h2>
+			<div class="card-title" style="margin-top:80px;">
+				<h2 class="card-title text-center" style="color:#747474; font-size:70px; font-family: 'Sunflower', sans-serif;">I'ary</h2>
 			</div>
 				
 			<div class="card-body">
-				<form class="form-signin" method="POST" onSubmit="logincall();return false" action="/login">
-					{% csrf_token %}
-				<label for="inputEmail" class="sr-only">Your ID</label>
-					<input type="text" id="userid" class="form-control" placeholder="  아이디(이메일)" required autofocus name="userid"><br>
+				<form class="form-signin" method="POST" action='/login' onSubmit="logincall();return false">
+				{%csrf_token%}
+				<label for="userid" class="sr-only">Your ID</label>
+					<input type="text" name="userid" class="form-control" placeholder="  아이디" required autofocus name="userid"/>
 				
-				<label for="inputPassword" class="sr-only">Password</label>
-					<input type="password" id="userpw" class="form-control" placeholder="  비밀번호" required name="userpassword"><br>
+				<label for="userpw" class="sr-only">Password</label>
+					<input type="password" name="userpw" class="form-control" placeholder="  비밀번호" required name="userpassword"/>
 				
-				<button id="btn-Yes" class="btn btn-lg btn-primary btn-block" type="submit" onclick="loginbtn()">로 그 인</button>
+				<button id="btn-login" class="btn btn-lg btn-secondary btn-block" type="submit">로그인</button>
 				</form>
+				
+				<button id="btn-register" class="btn btn-lg btn-block" type="submit"><a href="#">회원가입</a></button>
+				
 			</div>
-
-			<div>
-				{{res}}
-			</div>
+	
 			
-		</div>
+		
 
-		<div class="modal">
-		</div>
+		<div class="modal"> </div> 
+		
 	
 	</body>
-</html>                  
+</html>       

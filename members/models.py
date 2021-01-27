@@ -7,7 +7,7 @@ class Members(models.Model):
     userid = models.CharField(max_length=16, verbose_name="user_id")
     #userpassword = forms.CharField(widget=forms.PasswordInput)
     userpassword = models.CharField(max_length=16, verbose_name="user_password",null=True, default='')
-    username = models.CharField(max_length=16, verbose_name="user_name")
+    username = models.CharField(max_length=16, verbose_name="user_name",null=True)
     usergender = models.CharField(max_length=2,verbose_name="user_gender",null=True, default='')
     useremail = models.EmailField(max_length=128, verbose_name="user_email")
     userphone = models.CharField(max_length=16, verbose_name="user_phone")
