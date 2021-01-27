@@ -13,6 +13,7 @@ from django.db import models
 
 class Photo(models.Model):
     #post = models.ForeignKey(Post, on_delete=models.CASCADE, null=True)
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=50, null=True)
     image = models.ImageField(upload_to='images/', blank=True, null=True)
     content = models.TextField(null=True)
