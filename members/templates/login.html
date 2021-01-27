@@ -86,10 +86,10 @@
 				<form class="form-signin" method="POST" action='/login' onSubmit="logincall();return false">
 				{%csrf_token%}
 				<label for="userid" class="sr-only">Your ID</label>
-					<input type="text" name="userid" class="form-control" placeholder="  아이디" required autofocus name="userid"/>
+					<input type="text" class="form-control" placeholder="  아이디" required autofocus name="userid"/>
 				
 				<label for="userpw" class="sr-only">Password</label>
-					<input type="password" name="userpw" class="form-control" placeholder="  비밀번호" required name="userpassword"/>
+					<input type="password" class="form-control" placeholder="  비밀번호" required name="userpassword"/>
 				
 				<button id="btn-login" class="btn btn-lg btn-secondary btn-block" type="submit">로그인</button>
 				</form>

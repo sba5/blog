@@ -25,13 +25,13 @@ def login(req):
                     res_data['res'] = member.username
                     return render(req, 'index.html', res_data)
                 else:
+                    print("비밀번호가 틀림")
                     res_data['res'] = '비밀번호가 틀림'
             else:
                 res_data['res'] = '존재하지 않는 아이디입니다.'
         
         # print(req.POST['userid'])
-        
-        return render(req, 'index.html', res_data)
+
 
     return render(req, 'login.html')
 
