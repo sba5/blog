@@ -9,11 +9,21 @@ def index(req, res_data):
     print(res_data)
     print('=================')
     photos = Photo.objects.all()
+    imglist = []
     for photo in reversed(photos):
-        i=0
-        print(photo.content)
-        i=i+1
-        if i==1:
-            break
-    # res_data['recent_img']
+        imglist.append(str(photo.image))
+        print(imglist)
+
+    for i in range(0, 3):
+        res_data[f'img{i}'] = 'http://27.96.131.103:8000/media/'+imglist[i]
+    # for photo in reversed(photos):
+    #     i=0
+    #     imgname = str(photo.image)
+    #     res_data[f'img{i}'] = 'http://27.96.131.103:8000/media/'+imgname
+    #     print(f'img{i}','=',res_data[f'img{i}'])
+    #     i=i+1
+    #     if i==3:
+    #         break
+    # res_data['img0'] = 'http://27.96.131.103:8000/media/images/0.png'
+
     return render(req, 'index.html', res_data)
