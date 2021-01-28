@@ -26,4 +26,5 @@ def index(req, res_data):
     #         break
     # res_data['img0'] = 'http://27.96.131.103:8000/media/images/0.png'
 
+    
     return render(req, 'index.html', res_data)
