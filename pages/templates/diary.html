@@ -11,15 +11,14 @@
       
       <style>
 
-            @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
         body {
-				background-image : url('dog.png');
+				background-image : url('http://27.96.131.103:8000/static/dog.png');
                 height : 100vh;
 				background-size : 100% 100%;
 				background-repeat: no-repeat;
 				background-position: center top;
-                font-family: 'Jua', sans-serif;
 			}
 
         .whole {
@@ -42,23 +41,44 @@
 
         #upload {
             margin-left:220px;
+            font-family: 'Jua', sans-serif;
         }
 
         .write{
             margin-top:10px;
+            font-family: 'Jua', sans-serif;
         }
 
-        
-        
+        .aa {
+            position:absolute;
+            z-index:3;
+            font-family: 'Jua', sans-serif;
+        }
 
+        .aaa {
+            position:absolute;
+            margin-top:30px;
+            z-index:3;
+            font-family: 'Jua', sans-serif;
+        }
 
-        
+        #exampleModalLabel {
+            font-family: 'Jua', sans-serif;
+        }
 
-        
-      
-     
-      
-      </style>
+        .btn {
+            font-family: 'Jua', sans-serif;
+        }
+
+        .badge >h1 {
+            font-family: 'Jua', sans-serif;
+        }
+
+        .nav-link > h3 {
+            font-family: 'Jua', sans-serif;
+        }
+
+        </style>
    </head>
 
    <body>
@@ -74,7 +94,7 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                    <form method="POST" action="/pages/diary">
+                    <form method="POST" action="">
                         {% csrf_token %}
                         <input type="text" name="title" class="form-control form-control-lg" placeholder="제목">
                         <input type="text" name="content" class="form-control form-control-lg" placeholder="내용" style="margin-top:10px; height:200px;">
@@ -99,39 +119,58 @@
                 <a class="nav-link" href="/login" onclick="logout()"><h3 style="color:#17a2b8;">로그아웃</h3></a>
             
         </div>
-
+        <h3 class="aa" style="margin-left: 220px;">{{title0}}</h3>
+        <h4 class="aaa"style="margin-left: 220px;">{{content0}}</h4>
+        <h3 class="aa" style="margin-left: 485px;">{{title1}}</h3>
+        <h4 class="aaa"style="margin-left: 485px;">{{content1}}</h4>
+        <h3 class="aa" style="margin-left: 750px;">{{title2}}</h3>
+        <h4 class="aaa"style="margin-left: 750px;">{{content2}}</h4>
+        <h3 class="aa" style="margin-left: 1015px;">{{title3}}</h3>
+        <h4 class="aaa"style="margin-left: 1015px;">{{content3}}</h4>
+        <h3 class="aa" style="margin-left: 1280px;">{{title4}}</h3>
+        <h4 class="aaa"style="margin-left: 1280px;">{{content4}}</h4>
         <div class="img_container">
             <span style="margin-left:220px">
-                <img src="diary.jpg" class="diary">
+                <img src="http://27.96.131.103:8000/static/diary.jpg" class="diary">
             </span>
             <span>
-                <img src="diary.jpg" class="diary">
+                <img src="http://27.96.131.103:8000/static/diary.jpg" class="diary">
             </span>
             <span>
-                <img src="diary.jpg" class="diary">
+                <img src="http://27.96.131.103:8000/static/diary.jpg" class="diary">
             </span>
             <span>
-                <img src="diary.jpg" class="diary">
+                <img src="http://27.96.131.103:8000/static/diary.jpg" class="diary">
             </span>
             <span>
-                <img src="diary.jpg" class="diary">
+                <img src="http://27.96.131.103:8000/static/diary.jpg" class="diary">
             </span>
         </div>
+        <h3 class="aa" style="margin-left: 220px;">{{title5}}</h3>
+        <h4 class="aaa"style="margin-left: 220px;">{{content5}}</h4>
+        <h3 class="aa" style="margin-left: 485px;">{{title6}}</h3>
+        <h4 class="aaa"style="margin-left: 485px;">{{content6}}</h4>
+        <h3 class="aa" style="margin-left: 750px;">{{title7}}</h3>
+        <h4 class="aaa"style="margin-left: 750px;">{{content7}}</h4>
+        <h3 class="aa" style="margin-left: 1015px;">{{title8}}</h3>
+        <h4 class="aaa"style="margin-left: 1015px;">{{content8}}</h4>
+        <h3 class="aa" style="margin-left: 1280px;">{{title9}}</h3>
+        <h4 class="aaa"style="margin-left: 1280px;">{{content9}}</h4>
         <div class="img_container2">
             <span style="margin-left:220px">
-                <img src="diary.jpg" class="diary">
+                <img src="http://27.96.131.103:8000/static/diary.jpg" class="diary">
             </span>
             <span>
-                <img src="diary.jpg" class="diary">
+                <img src="http://27.96.131.103:8000/static/diary.jpg" class="diary">
             </span>
             <span>
-                <img src="diary.jpg" class="diary">
+                <img src="http://27.96.131.103:8000/static/diary.jpg" class="diary">
             </span>
             <span>
-                <img src="diary.jpg" class="diary">
+                <img src="http://27.96.131.103:8000/static/diary.jpg" class="diary">
             </span>
             <span>
-                <img src="diary.jpg" class="diary">
+                <img src="http://27.96.131.103:8000/static/diary.jpg" class="diary">
             </span>
         </div>
 

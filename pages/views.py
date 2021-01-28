@@ -10,12 +10,24 @@ def index(req, res_data):
     print(res_data)
     print('=================')
     photos = Photo.objects.all()
+    diaries = Diary.objects.all()
     imglist = []
+    titlelist = []
+    contentlist = []
+
     for photo in reversed(photos):
         imglist.append(str(photo.image))
 
     for i in range(0, 3):
         res_data[f'img{i}'] = 'http://27.96.131.103:8000/media/'+imglist[i]
+
+    for diary in reversed(diaries):
+        titlelist.append(diary.title)
+        contentlist.append(diary.content)
+
+    for i in range(0, 3):
+        res_data[f'title{i}'] = titlelist[i]
+        res_data[f'content{i}'] = contentlist[i]
     # for photo in reversed(photos):
     #     i=0
     #     imgname = str(photo.image)
@@ -47,13 +59,11 @@ def diary(req):
         for diary in diaries:
             titlelist.append(diary.title)
             contentlist.append(diary.content)
-            print(titlelist)
-            print(contentlist)
-            print(type(titlelist[0]))
-        # for i in range(0, 10):
-        #     res_data[f'title{i}'] = titlelist[i]
-        #     res_data[f'content{i}'] = contentlist[i]
-
+        for i in range(0, 10):
+            res_data[f'title{i}'] = titlelist[i]
+            print(titlelist[i])
+            res_data[f'content{i}'] = contentlist[i]
+            print(contentlist[i])
         # res_data = {}
         # # res_data = {}
         # # res_data['res'] = '회원가입을 축하드립니다!'
@@ -69,13 +79,15 @@ def diary(req):
     res_data = {}
     diaries = Diary.objects.all().order_by('-id')
     titlelist = []
-    diarylist = []
+    contentlist = []
     for diary in diaries:
         titlelist.append(diary.title)
-        diarylist.append(diary.diary)
+        contentlist.append(diary.content)
              
-    # for i in range(0, 10):
-    #     res_data[f'title{i}'] = titlelist[i]
-    #     res_data[f'content{i}'] = contentlist[i]
+    for i in range(0, 10):
+        res_data[f'title{i}'] = titlelist[i]
+        print(titlelist[i])
+        res_data[f'content{i}'] = contentlist[i]
+        print(contentlist[i])
     
     return render(req, 'diary.html', res_data) 
