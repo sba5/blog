@@ -33,7 +33,7 @@
             .card {
                 margin-top:50px;
                 margin-right:30px;
-                display:inline-block
+                display:inline-block;
 
             }
 
@@ -71,6 +71,20 @@
             }
 
 
+            form > input {
+                margin-bottom:5px;
+                font-family: 'Jua', sans-serif;
+            }
+
+            .write {
+                margin-left:60px;
+            }
+
+            #cont {
+                height:300px;
+            }
+
+
         </style>
     </head>
     <body>
@@ -86,25 +100,14 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <form method="POST" action="/images/"> 
-                    {% csrf_token %}  
-                    <input type="text" name="imgtitle">
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
-                  <form method="POST" action="/images/" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <input name = "imgupload" id="file-upload" type="file" accept=".jpg,.jpeg,.png" multiple >
-                    <input type="submit" value="제출">
-                  </form>
-                  <div class="modal-body">
-                    <form method="POST" action="/images/"> 
-                      {% csrf_token %}  
-                      <input type="text" name="imgcontent">
+                    <form method="POST" action="/images" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="text" name="title" class="form-control form-control-lg" placeholder="제목">
+                        <input type="text" name="content" class="form-control form-control-lg" placeholder="내용" id="cont">
+                        <input type="file" name="imgs" multiple>
+                        <input type="submit" value="작성하기" class="write">
                     </form>
-                  </div>
-               
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
                 
                 
                 </div>
@@ -115,10 +118,10 @@
         <a href=""><div class="badge badge-pill badge-info"><h1>I'ary!</h1></div></a>
         <div class="whole border border-info rounded">
             
-                <a class="nav-link" href="/index"><h3 style="color:#17a2b8;">{{username}}</h3></a>
-                <a class="nav-link" href="#"><h3 style="color:#17a2b8;">다이어리</h3></a>
-                <a class="nav-link" href="#"><h3 style="color:#17a2b8;">사진첩</h3></a>
-                <a class="nav-link" href="#"><h3 style="color:#17a2b8;">로그아웃</h3></a>
+                <a class="nav-link" href="#"><h3 style="color:#17a2b8;">{{username}}</h3></a>
+                <a class="nav-link" href="/pages/diary"><h3 style="color:#17a2b8;">다이어리</h3></a>
+                <a class="nav-link" href="/images"><h3 style="color:#17a2b8;">사진첩</h3></a>
+                <a class="nav-link" href="/login" onclick="logout()"><h3 style="color:#17a2b8;">로그아웃</h3></a>
             
         </div>
         <div class="img_container">
@@ -191,4 +194,9 @@
         </button>
         
     </body>
+    <script>
+        function logout(){
+            alert("로그아웃 되었습니다 !");
+        }
+    </script>
 </html>

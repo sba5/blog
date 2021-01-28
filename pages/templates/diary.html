@@ -15,14 +15,19 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
 
-		
+		<link rel="shortcut icon" href="iary_Q8u_icon.ico">
 		<style>
+
+        
+
+        
 		body {
 				background-image : url('dog.png');
                 height : 100vh;
 				background-size : 100% 100%;
 				background-repeat: no-repeat;
 				background-position: center top;
+               
 				
 			}
 	
@@ -38,14 +43,34 @@
                 margin-top:10px;
             }
         .outer {
-            padding-left:220px;
+            padding-left:300px;
             padding-right:200px;
         }
         
-        .btn btn-outline-warning{
-           
+     
+
+        .outer .btn { 
+            background-image: url("a.jpg");
+            background-size: cover; 
+            width: 450px; 
+            height: 450px; 
+            font-size: 2rem;
+            color: #17a2b8;
+            border:1px solid #17a2b8 ;
+            
+            
+            }
+
+        .modal-header {
+            background-color: #17a2b8;
+            border-radius: 360px;
         }
-		
+        
+        .modal-content {
+            border-radius: 40px;
+            background-color: #9ccad1;
+        }
+     
 		
 		</style>
 	</head>
@@ -53,26 +78,26 @@
 	<body>
 
         <script>
-        dsdkfsdfsdkfsjdlfjasldkfjaskldjfasdfalkjasdflkjasdfkljsdkk    
+           
         </script>
 	
         <a href=""><span class="badge badge-pill badge-info"><h1>I'ary!</h1></span></a>
         
         <div class="whole border border-info rounded">
             
-                <a class="nav-link" href="#"><h3 style="color:#17a2b8;">{{username}}</h3></a>
-                <a class="nav-link" href="#"><h3 style="color:#17a2b8;">다이어리</h3></a>
-                <a class="nav-link" href="#"><h3 style="color:#17a2b8;">사진첩</h3></a>
-                <a class="nav-link" href="#"><h3 style="color:#17a2b8;">로그아웃</h3></a>
+                <a class="nav-link" href=""><h3 style="color:#17a2b8;">{{username}}</h3></a>
+                <a class="nav-link" href="/pages/diary"><h3 style="color:#17a2b8;">다이어리</h3></a>
+                <a class="nav-link" href="/images"><h3 style="color:#17a2b8;">사진첩</h3></a>
+                <a class="nav-link" href="/login" onclick="logout()"><h3 style="color:#17a2b8;">로그아웃</h3></a>
             
 		</div>
 
         <div class="outer">
              <!-- Button trigger modal -->
-                 <button type="button" class="btn btn-outline-warning" data-mdb-ripple-color="dark" data-toggle="modal" data-target="#exampleModalLong">
+                 <button type="button" class="btn btn-info" data-mdb-ripple-color="dark" data-toggle="modal" data-target="#exampleModalLong">
                          일기 쓰러가기
                 </button>
-            </div>
+        </div>
         
 
         <!-- Modal -->
@@ -107,5 +132,10 @@
         </div>
 
         
-	</body>
+    </body>
+    <script>
+        function logout(){
+            alert("로그아웃 되었습니다 !");
+        }
+    </script>
 </html>
