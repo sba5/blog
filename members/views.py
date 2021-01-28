@@ -58,10 +58,10 @@ def signup(req):
         )
         
         member.save()
-        res_data = {}
-        res_data['res'] = '회원가입을 축하드립니다!'
+        # res_data = {}
+        # res_data['res'] = '회원가입을 축하드립니다!'
         print(req.POST['username'])
-        return render(req, 'login.html', res_data)
+        return render(req, 'login.html')
 
         
     return render(req, 'signup.html')
