@@ -27,7 +27,8 @@ urlpatterns = [
     
     path('', include('members.urls')),
     path('pages/', include('pages.urls')),
-    path('images/', include('images.urls')),    
+    path('images/', include('images.urls')),
+    path('index/', include('pages.urls')),       
     
     ]
 

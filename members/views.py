@@ -23,7 +23,7 @@ def login(req):
         for member in members:
             if userid == member.userid:
                 if userpw == member.userpassword:
-                    res_data['res'] = member.username
+                    res_data['username'] = member.username
                     # res_data['pid'] = member.id
                     print('member pid : ', member.id)
                     print('로그인 성공')
