@@ -4,7 +4,8 @@ from django.db import models
 
 class Diary(models.Model):
     id = models.AutoField(primary_key=True)
-    content = models.CharField(max_length=16, verbose_name="user_id")
+    title = models.CharField(max_length=50, verbose_name="user_id", null=True)
+    content = models.CharField(max_length=1000, verbose_name="user_id")
     
     class Meta:
         db_table = "Diaries"

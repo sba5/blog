@@ -23,8 +23,7 @@ def photo(req):
         titlelist = []
         for photo in photos:
             imglist.append(photo.image)
-            titlelist.append(photo.title)
-             
+            titlelist.append(photo.title)    
         for i in range(0, 10):
             res_data[f'img{i}'] = 'http://27.96.131.103:8000/media/'+str(imglist[i])
             res_data[f'title{i}'] = str(titlelist[i])
@@ -47,7 +46,6 @@ def photo(req):
     for photo in photos:
         imglist.append(photo.image)
         titlelist.append(photo.title)    
-
     for i in range(0, 10):
         res_data[f'img{i}'] = 'http://27.96.131.103:8000/media/'+str(imglist[i])
         res_data[f'title{i}'] = str(titlelist[i])

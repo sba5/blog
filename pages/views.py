@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http.response import HttpResponse
 from images.models import Photo
+from .models import Diary
 
 # Create your views here.
 
@@ -12,7 +13,6 @@ def index(req, res_data):
     imglist = []
     for photo in reversed(photos):
         imglist.append(str(photo.image))
-        print(imglist)
 
     for i in range(0, 3):
         res_data[f'img{i}'] = 'http://27.96.131.103:8000/media/'+imglist[i]
@@ -31,21 +31,28 @@ def index(req, res_data):
 
 def diary(req):
     if req.method == 'POST':
-        diary = req.POST.get('diary')
+        title = req.POST.get('title')
+        content = req.POST.get('content')
 
         diary = Diary(
-            diary = diary,
+            title = title,
+            content = content,
         )
         diary.save()
 
         res_data = {}
         diaries = Diary.objects.all().order_by('-id')
-        diarylist = []
+        titlelist = []
+        contentlist = []
         for diary in diaries:
-            diarylist.append(diary.diary)
-             
-        for i in range(0, 10):
-            res_data[f'diary{i}'] = str(diarylist[i])
+            titlelist.append(diary.title)
+            contentlist.append(diary.content)
+            print(titlelist)
+            print(contentlist)
+            print(type(titlelist[0]))
+        # for i in range(0, 10):
+        #     res_data[f'title{i}'] = titlelist[i]
+        #     res_data[f'content{i}'] = contentlist[i]
 
         # res_data = {}
         # # res_data = {}
@@ -55,23 +62,20 @@ def diary(req):
         # print(str(imgs))
         # print(title)
         # res_data['img0'] = 'http://27.96.131.103:8000/media/images/'+str(imgs)
-        return render(req, 'photo.html', res_data)
+        
+        return render(req, 'diary.html', res_data)
 
-
-    diary = req.POST.get('diary')
-
-    diary = Diary(
-        diary = diary,
-    )
-    diary.save()
 
     res_data = {}
     diaries = Diary.objects.all().order_by('-id')
+    titlelist = []
     diarylist = []
     for diary in diaries:
+        titlelist.append(diary.title)
         diarylist.append(diary.diary)
              
-    for i in range(0, 10):
-        res_data[f'diary{i}'] = str(diarylist[i])
+    # for i in range(0, 10):
+    #     res_data[f'title{i}'] = titlelist[i]
+    #     res_data[f'content{i}'] = contentlist[i]
     
-    return render(req, 'photo.html', res_data) 
+    return render(req, 'diary.html', res_data) 
