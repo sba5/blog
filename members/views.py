@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http.response import HttpResponse
 from .models import Members
-
+from pages.views import index
 
 # Create your views here.
 
@@ -27,7 +27,8 @@ def login(req):
                     # res_data['pid'] = member.id
                     print('member pid : ', member.id)
                     print('로그인 성공')
-                    return render(req, 'index.html', res_data)
+                    #return render(req, 'index.html', res_data)
+                    return index(req, res_data)
 
         res_data['res'] = '아이디가 존재하지 않거나 비밀번호가 틀렸습니다.'
         return render(req, 'login.html', res_data)
